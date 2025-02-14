@@ -1,8 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, Text } from 'react-native';
+import { View, Text, Image, Animated, Easing } from 'react-native';
+import { Container } from 'components/Container';
+import pic from './assets/icon.png';
 import './global.css';
+import { useEffect,useRef } from 'react';
 
 export default function App() {
+  const spinValue = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    Animated.loop(
+      Animated.timing(spinValue, {
+        toValue: 1,
+        duration: 2000,
+        easing: Easing.linear,
+        useNativeDriver: true,
+      })
+    ).start();
+  }, [spinValue]);
+
+  const spin = spinValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '360deg'],
+  });
+
   return (
     <>
       <StatusBar style="auto" />
@@ -11,7 +31,16 @@ export default function App() {
         <Text className="mt-2 text-green-600">
           This is a test to check if Tailwind (NativeWind) is working correctly.
         </Text>
+        <Container>
+          <View>
+           <Animated.Image 
+           source={pic}
+           className={"w-22 h-22"}
+           style={{transform: [{rotate:spin}]}}
+           />
       </View>
+       </Container>
+       </View>
     </>
   );
 }
