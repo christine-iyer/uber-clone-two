@@ -63,7 +63,7 @@ members. It's a place where people help each other out.
 - PostgreSQL
 - Google Maps
 - zustand
-- Clerk
+- [Clerk](https://clerk.com/docs/references/nextjs/custom-sign-in-or-up-page?_gl=1*qrzmuu*_gcl_au*MTg5MTU0OTE2Ny4xNzM5NjQ5MTE4*_ga*NTMwNzE3MDgwLjE3Mzk2NDkxMTg.*_ga_1WMF5X234K*MTczOTY0OTExOC4xLjEuMTczOTY0OTIyNy4wLjAuMA..)
 - Tailwind CSS
 
 ## <a name="features">🔋 Features</a>
