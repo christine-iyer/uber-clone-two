@@ -1,12 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import { View, Text, Image, Animated, Easing } from 'react-native';
 import { Container } from 'app/components/Container';
-// import {pic} from '../app/assets/images/splash'
 import './global.css';
 import { useEffect,useRef } from 'react';
 
 export default function Home() {
-  
+  const spinValue = useRef(new Animated.Value(0)).current;
+  useEffect(() => {
+    Animated.loop(
+      Animated.timing(spinValue, {
+        toValue: 4,
+        duration: 20000,
+        easing: Easing.linear,
+        useNativeDriver: true,
+      })
+    ).start();
+  }, [spinValue]);
+
+  const spin = spinValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '360deg'],
+  });
+
   return (
     <>
       <StatusBar style="auto" />
@@ -17,11 +32,11 @@ export default function Home() {
         </Text>
         <Container>
           <View className="w-16 h-16">
-           {/* <Image 
+           <Animated.Image 
            source={pic}
            className={"w-full h-full"}
-
-           /> */}
+           style={{transform: [{rotate:spin}]}}
+           />
       </View>
        </Container>
        </View>
