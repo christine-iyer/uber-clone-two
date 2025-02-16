@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Car-Clone",
+    "name": "uber-2",
     "slug": "uber-2",
     "version": "1.0.0",
 
@@ -15,11 +15,11 @@
     "plugins": [],
 
     "orientation": "portrait",
-    "icon": "./app/assets/icons/icon",
+    "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "light",
 
     "splash": {
-      "image": "./app/assets/images/splash.png",
+      "image": "./assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -29,7 +29,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./app/assets/icons/icon.png",
+        "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#ffffff"
       }
     }
